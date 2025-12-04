@@ -16,7 +16,9 @@
 class Solution {
     int fun(TreeNode tptr){
         if(tptr==null) return 0;
-        return 1+fun(tptr.left)+fun(tptr.right);
+        int l=fun(tptr.left);
+        int r=fun(tptr.right);
+        return 1+l+r;
     }
     public int countNodes(TreeNode root) {
         return fun(root);
