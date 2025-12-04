@@ -14,20 +14,16 @@
  * }
  */
 class Solution {
-    int fun(TreeNode t,int dir){
-        if(t==null)return 0;
-        if(t.left==null && t.right==null && dir==1){
-            return t.val;
+    int fun(TreeNode t){
+        if(t == null) return 0;
+        int sum = 0;
+        if(t.left != null && t.left.left == null && t.left.right == null) {
+            sum += t.left.val;
         }
-        int l=fun(t.left,1);
-        int r=0;
-        r=fun(t.right,0);
-        System.out.println(r+" "+l);
-        return l+r;
+        return sum + fun(t.left) + fun(t.right);
     }
+
     public int sumOfLeftLeaves(TreeNode root) {
-        int sum=0;
-        if(root.left==null && root.right==null) return 0;
-        return fun(root,0);
+        return fun(root);
     }
 }
