@@ -20,12 +20,11 @@ class Solution {
             l=fun(t.left);
             r=fun(t.right);
         }
-        else if(t.left==null && t.right==null){
+        else{
             if(t.val==1)return true;
             else return false;
         }
         if(t.val == 2){
-            System.out.println(l||r);
             return l||r;
         }
         else return l&&r;
