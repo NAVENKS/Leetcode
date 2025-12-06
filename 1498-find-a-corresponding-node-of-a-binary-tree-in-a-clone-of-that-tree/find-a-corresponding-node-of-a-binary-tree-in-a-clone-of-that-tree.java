@@ -14,6 +14,7 @@ class Solution {
         if(t==null)return;
         if(t.val==r.val){
             ans=t;
+            return;
         }
         fun(t.left,r);
         fun(t.right,r);
