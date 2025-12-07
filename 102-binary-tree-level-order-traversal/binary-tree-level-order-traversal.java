@@ -31,7 +31,7 @@ class Solution {
                 if(d.right!=null)q.add(d.right);
             }
             list.add(new ArrayList<>(l));
-            l=new ArrayList<>();
+            l.clear();
         }        
         return list;
     }
