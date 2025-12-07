@@ -17,7 +17,7 @@ class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         TreeNode d;
         int c;
-        Queue<TreeNode>q=new LinkedList<>();
+    Queue<TreeNode>q=new LinkedList<>();
     List<List<Integer>>list=new ArrayList<>();
     List<Integer>l=new ArrayList<>();
         if(root==null)return list;
