@@ -14,17 +14,17 @@
  * }
  */
 class Solution {
-    int fun(TreeNode t,int l,int h){
-        if(t==null)return 0;
-        int s=0;
+    void fun(TreeNode t,int l,int h,int n[]){
+        if(t==null)return;
         if(t.val >=l && t.val<=h){
-            s+=t.val;
+            n[0]+=t.val;
         }
-        s+=fun(t.left,l,h);
-        s+=fun(t.right,l,h);
-        return s;
+        fun(t.left,l,h,n);
+        fun(t.right,l,h,n);
     }
     public int rangeSumBST(TreeNode root, int l, int h) {
-        return fun(root,l,h);
+        int n[]={0};
+        fun(root,l,h,n);
+        return n[0];
     }
 }
