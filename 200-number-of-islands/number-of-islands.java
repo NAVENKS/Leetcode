@@ -20,11 +20,10 @@ class Solution {
                         for(int in=0;in<dir.length;in++){
                             int wr=n[0]+dir[in][0];
                             int wc=n[1]+dir[in][1];
-                            if(wr>=0&&wc>=0&&wr<g.length&&wc<g[0].length){
-                                if(g[wr][wc]=='1'){
+                            if(wr>=0&&wc>=0&&wr<g.length&&wc<g[0].length&&g[wr][wc]=='1'){
                                     stack.push(new int[]{wr,wc});
                                     m[wr][wc]=m[n[0]][n[1]];
-                                }
+                                
                             }
                         }
                     }
