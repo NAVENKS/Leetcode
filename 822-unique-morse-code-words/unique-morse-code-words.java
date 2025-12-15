@@ -1,15 +1,20 @@
 class Solution {
-    public int uniqueMorseRepresentations(String[] w) {
-        String c[]={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
-        HashMap<String,Integer>map=new HashMap<>();
-        for(int i=0;i<w.length;i++){
-            StringBuilder s=new StringBuilder();
-            for(int j=0;j<w[i].length();j++){
-                int in=w[i].charAt(j)-97;
-                s.append(c[in]);
-            }
-            map.put(s.toString(),map.getOrDefault(s.toString(),0)+1);
+    String[] map ={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+    public int uniqueMorseRepresentations(String[] words) {
+        
+        Set<String> set = new HashSet<>();
+        for(String word: words){
+            set.add(transform(word));
         }
-        return map.size();
+
+        return set.size();
+    }
+
+    public String transform(String s){
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<s.length(); i++){
+            sb.append(map[s.charAt(i) - 'a']);
+        }
+        return sb.toString();
     }
 }
