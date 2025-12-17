@@ -1,7 +1,7 @@
 class Solution {
     void fun(String s,long n[],int in){
-        if(in>=s.length() || (s.charAt(in)-48)<0 || (s.charAt(in)-48)>9)return;
-        if(n[0]>Integer.MAX_VALUE)return;
+        if(in>=s.length() || (s.charAt(in)-48)<0 || (s.charAt(in)-48)>9 ||n[0]>Integer.MAX_VALUE)return;
+        // if(n[0]>Integer.MAX_VALUE)return;
         long num=s.charAt(in)-48;
         n[0]=(n[0]*10)+num;
         fun(s,n,in+1);
