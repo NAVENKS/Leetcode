@@ -11,11 +11,8 @@ class Solution {
         if(s.length()==0)return 0;
         long n[]={0};
         int sign=1;
-        if(s.charAt(0)=='-'){
-            sign=-1;
-            fun(s.substring(1,s.length()),n,0);
-        }
-        else if(s.charAt(0)=='+'){
+        sign = (s.charAt(0) == '-') ? -1 : 1;
+        if(s.charAt(0)=='-' || s.charAt(0)=='+'){
             fun(s.substring(1,s.length()),n,0);
         }
         else
