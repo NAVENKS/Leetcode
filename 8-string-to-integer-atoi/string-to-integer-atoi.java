@@ -1,7 +1,6 @@
 class Solution {
     void fun(String s,long n[],int in){
         if(in>=s.length() || (s.charAt(in)-48)<0 || (s.charAt(in)-48)>9 ||n[0]>Integer.MAX_VALUE)return;
-        // if(n[0]>Integer.MAX_VALUE)return;
         long num=s.charAt(in)-48;
         n[0]=(n[0]*10)+num;
         fun(s,n,in+1);
@@ -13,7 +12,7 @@ class Solution {
         int sign=1;
         sign = (s.charAt(0) == '-') ? -1 : 1;
         if(s.charAt(0)=='-' || s.charAt(0)=='+'){
-            fun(s.substring(1,s.length()),n,0);
+            fun(s,n,1);
         }
         else
         fun(s,n,0);
