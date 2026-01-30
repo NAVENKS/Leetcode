@@ -3,14 +3,28 @@ class Solution {
         long ud=0;
         long lr=0;
         for(char ch:moves.toCharArray()){
-            if(ch=='U')
-            ud++;
-            else if(ch=='D')
-            ud--;
-            else if(ch=='R')
-            lr++;
-            else
-            lr--;
+            // if(ch=='U')
+            // ud++;
+            // else if(ch=='D')
+            // ud--;
+            // else if(ch=='R')
+            // lr++;
+            // else
+            // lr--;
+            switch(ch){
+                case 'U':
+                ud++;
+                break;
+                case 'D':
+                ud--;
+                break;
+                case 'R':
+                lr++;
+                break;
+                case 'L':
+                lr--;
+                break;
+            }
         }
         if(ud==0 && lr==0)
         return true;
