@@ -3,7 +3,7 @@ class Solution {
     public void dfs(int node,int adj[][]){
         visited[node]=true;
         for(int i=0;i<adj[node].length;i++){
-            if(!visited[i] && adj[node][i]==1){
+            if(!visited[i] && adj[node][i]==1 && i!=node){
                 dfs(i,adj);
             }
         }
