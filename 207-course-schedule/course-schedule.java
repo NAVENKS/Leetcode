@@ -3,7 +3,7 @@ class Solution {
         ArrayList<ArrayList<Integer>>adj=new ArrayList<>();
         int income[]=new int [n];
         Queue<Integer>q=new LinkedList<>();
-        ArrayList<Integer>ans=new ArrayList<>();
+        int ans=0;
         for(int i=0;i<n;i++){
             adj.add(new ArrayList<>());
         }
@@ -18,7 +18,7 @@ class Solution {
         }
         while(!q.isEmpty()){
             int poll=q.poll();
-            ans.add(poll);
+            ans++;
             for(int a:adj.get(poll)){
                 income[a]--;
                 if(income[a]==0){
@@ -26,6 +26,6 @@ class Solution {
                 }
             }
         }
-        return ans.size()==n;
+        return ans==n;
     }
 }
