@@ -38,7 +38,6 @@ class Solution {
         }
         // if(count==0 && not==0 && g.length==1)
         // return 0;
-        System.out.print(g.length+" "+not+" "+count);
         return not==0?count:-1;
     }
 }
