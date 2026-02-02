@@ -12,8 +12,8 @@ class Solution {
                 }
                 if (sum >= t)
                     j--;
-                else if (sum <= t)
-                    i++;
+                else
+                i++;
             }
         }
         return answer;
