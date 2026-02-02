@@ -5,20 +5,14 @@ class Solution {
             if(!map.containsKey(nums1[i]))
             map.put(nums1[i],1);
         }
+        int ans[]=new int[Math.min(nums1.length,nums2.length)];
+        int j=0;
         for(int i=0;i<nums2.length;i++){
-            if(map.containsKey(nums2[i]))
-            map.put(nums2[i],map.get(nums2[i])+1);
+            if(map.containsKey(nums2[i])){
+                ans[j++]=nums2[i];
+                map.remove(nums2[i]);
+            }
         }
-        int count=0;
-        for(int key:map.keySet()){
-            if(map.get(key)>1)
-            count++;
-        }
-        int ans[]=new int[count];
-        for(int key:map.keySet()){
-            if(map.get(key)>1)
-            ans[--count]=key;
-        }
-        return ans;
+        return Arrays.copyOfRange(ans,0,j);
     }
 }
