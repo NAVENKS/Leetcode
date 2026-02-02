@@ -4,11 +4,11 @@ class Solution {
         if (s.length() == 0)
             return true;
         for (int i = 0; i < t.length(); i++) {
-            if (s.charAt(j) == t.charAt(i))
+            if (j<s.length() && s.charAt(j) == t.charAt(i))
                 j++;
-            if (j == s.length())
-                return true;
         }
+        if (j == s.length())
+            return true;
         System.out.print(j);
         return false;
     }
