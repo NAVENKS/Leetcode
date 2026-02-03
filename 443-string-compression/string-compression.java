@@ -8,7 +8,6 @@ class Solution {
             if (prev == s[j]) {
                 c++;
             } else {
-                System.out.println(prev);
                 if (c == 1) {
                     s[i++] = prev;
                     c = 1;
@@ -16,7 +15,7 @@ class Solution {
                 } else {
                     count.append(c + "");
                     s[i++] = prev;
-                    for (int l=0;l<count.length();l++) {
+                    for (int l = 0; l < count.length(); l++) {
                         s[i++] = count.charAt(l);
                     }
                     c = 1;
