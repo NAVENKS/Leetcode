@@ -16,8 +16,8 @@ class Solution {
                 } else {
                     count.append(c + "");
                     s[i++] = prev;
-                    for (char ch : count.toString().toCharArray()) {
-                        s[i++] = ch;
+                    for (int l=0;l<count.length();l++) {
+                        s[i++] = count.charAt(l);
                     }
                     c = 1;
                     prev = s[j];
