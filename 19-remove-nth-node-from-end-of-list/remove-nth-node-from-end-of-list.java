@@ -23,7 +23,6 @@ class Solution {
             temp=temp.next;
         }
         temp.next=temp.next.next;
-        System.out.print(temp.val);
         return head;
     }
 }
