@@ -3,7 +3,7 @@ class Solution {
         int j=0;
         for(int i=1;i<n.length;i++){
             if(n[j]%2==0)j++;
-            else if(n[j]%2!=0 && n[i]%2==0){
+            else if((n[i] & 1) == 0){
                 int t=n[j];
                 n[j]=n[i];
                 n[i]=t;
