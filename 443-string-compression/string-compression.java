@@ -13,23 +13,24 @@ class Solution {
                     c = 1;
                     prev = s[j];
                 } else {
-                    count.append(c + "");
                     s[i++] = prev;
-                    for (int l = 0; l < count.length(); l++) {
-                        s[i++] = count.charAt(l);
+                    String num = Integer.toString(c);
+                    for (char ch : num.toCharArray()) {
+                        s[i++] = ch;
                     }
+
                     c = 1;
                     prev = s[j];
-                    count = new StringBuilder();
+
                 }
             }
         }
         if (c == 1) {
             s[i++] = prev;
         } else {
-            count.append(c + "");
             s[i++] = prev;
-            for (char ch : count.toString().toCharArray()) {
+            String num = Integer.toString(c);
+            for (char ch : num.toCharArray()) {
                 s[i++] = ch;
             }
 
