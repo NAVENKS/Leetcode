@@ -1,14 +1,14 @@
 class Solution {
     public int minOperations(String[] l) {
-        Stack<String>a=new Stack<>();
+        int j=0;
         for(int i=0;i<l.length;i++){
-            if(!a.isEmpty() && l[i].equals("../"))
-            a.pop();
+            if(j>0 && l[i].equals("../"))
+            j--;
             else if(l[i].equals("./"))
             continue;
             else if(!l[i].equals("./") && !l[i].equals("../"))
-            a.push(l[i]);
+            j++;
         }
-        return a.size();
+        return j;
     }
 }
