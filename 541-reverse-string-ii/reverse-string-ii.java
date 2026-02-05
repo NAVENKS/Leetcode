@@ -16,7 +16,6 @@ class Solution {
             s+=2*k;
         }
         s=s-(2*k);
-        System.out.println(s+" After ");
         if(s<(str.length())){
             if((str.length()-s)>=k){
                 int start=s;
