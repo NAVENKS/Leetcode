@@ -6,15 +6,18 @@ class Solution {
         int i=0,j=s.length()-1;
         if(n==1)return s;
         while(i<=j){
-            while(i<n && !vow.contains(s.charAt(i)+""))
+            char ci=s.charAt(i);
+            char cj=s.charAt(j);
+            if(!vow.contains(ci+""))
             i++;
-            while(j>=0 && !vow.contains(s.charAt(j)+""))
+            if(!vow.contains(cj+""))
             j--;
-            if(i>n-1 || j<0)return ans.toString();
-            ans.setCharAt(i,s.charAt(j));
-            ans.setCharAt(j,s.charAt(i));
-            i++;
-            j--;
+            else if(vow.contains(ci+"") && vow.contains(cj+"")){
+                ans.setCharAt(i,cj);
+                ans.setCharAt(j,ci);
+                i++;
+                j--;
+            }
         }
         return ans.toString();
     }
