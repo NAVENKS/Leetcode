@@ -4,7 +4,6 @@ class Solution {
         int c=str.length()/(2*k);
         int s=(2*k);
         for(int i=1;i<=c;i++){
-            System.out.print(s+" ");
             int start=s-(2*k);
             int end=start+k-1;
             while(start<=end){
