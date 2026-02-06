@@ -9,8 +9,6 @@ class Solution {
             map[ch]+=1;
             while(map[ch]>1){
                 map[s.charAt(i)]-=1;
-                if(map[ch]==0)
-                break;
                 i++;
             }
             ans=Math.max(ans,j-i+1);
