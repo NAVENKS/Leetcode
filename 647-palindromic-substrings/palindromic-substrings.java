@@ -1,23 +1,19 @@
 class Solution {
-    public int countSubstrings(String s) {
-        int ans=s.length();
-        for(int i=0;i<s.length();i++){
-            for(int j=i+1;j<s.length();j++){
-                boolean flag=true;
-                int l=i,h=j;
-                while(l<=h){
-                    if(s.charAt(l)!=s.charAt(h)){
-                        flag=false;
-                        break;
-                    }
-                    l++;
-                    h--;
-                }
-                if(flag){
-                    ans++;
-                }
-            }
+    public int centre(String s,int l,int h){
+        int c=0;
+        while(l>=0 && h<s.length() && s.charAt(l)==s.charAt(h)){
+            c++;
+            l--;
+            h++;
         }
-            return ans;
+        return c;
+    }
+    public int countSubstrings(String s) {
+        int ans=0;
+        for(int i=0;i<s.length();i++){
+            ans+=centre(s,i,i);
+            ans+=centre(s,i,i+1);
+        }
+        return ans;
     }
 }
