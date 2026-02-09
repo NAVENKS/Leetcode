@@ -14,20 +14,16 @@
  * }
  */
 class Solution {
-    void fun(TreeNode t,List<String>l){
-        if(t==null){
-            l.add("null");
-            return;
-        }
-        l.add(t.val+"");
-        fun(t.left,l);
-        fun(t.right,l);
+    boolean fun(TreeNode p,TreeNode q){
+        if(p==null && q==null)return true;
+        else if(p==null || q==null)return false;
+        else if(p.val!=q.val)
+        return false;
+        boolean l=fun(p.left,q.left);
+        boolean r=fun(p.right,q.right);
+        return l&&r;
     }
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        List<String>l1=new ArrayList<>();
-        List<String>l2=new ArrayList<>();
-        fun(p,l1);
-        fun(q,l2);
-        return l1.equals(l2);
+        return fun(p,q);
     }
 }
