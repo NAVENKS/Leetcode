@@ -14,31 +14,16 @@
  * }
  */
 class Solution {
-    void fun(TreeNode t,List<String>l){
-        if(t==null){
-            l.add("null");
-            return;
-        }
-        l.add(t.val+"");
-        fun(t.right,l);
-        fun(t.left,l);
-    }
-    void fun2(TreeNode t,List<String>l){
-        if(t==null){
-            l.add("null");
-            return;
-        }
-        l.add(t.val+"");
-        fun2(t.left,l);
-        fun2(t.right,l);
+    boolean fun(TreeNode p,TreeNode q){
+        if(p==null && q==null)return true;
+        else if(p==null || q==null)return false;
+        else if(p.val!=q.val)
+        return false;
+        boolean l=fun(p.left,q.right);
+        boolean r=fun(p.right,q.left);
+        return l&&r;
     }
     public boolean isSymmetric(TreeNode root) {
-        List<String>l1=new ArrayList<>();
-        List<String>l2=new ArrayList<>();
-        fun(root.left,l1);
-        fun2(root.right,l2);
-        System.out.println(l1);
-        System.out.println(l2);
-        return l1.equals(l2);
+        return fun(root.left,root.right);
     }
 }
