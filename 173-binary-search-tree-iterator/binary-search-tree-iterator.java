@@ -16,6 +16,7 @@
 class BSTIterator {
     List<TreeNode>l=new ArrayList<>();
     int i=0;
+    int j=0;
     public BSTIterator(TreeNode root) {
         fun(root);
     }
@@ -23,16 +24,17 @@ class BSTIterator {
         if(t==null)return;
         fun(t.left);
         l.add(t);
+        j++;
         fun(t.right);
     }
     public int next() {
-        int ans=l.get(i).val;
-        l.remove(i);
+        int ans=l.get(i++).val;
+        j--;
         return ans;
     }
     
     public boolean hasNext() {
-        return !l.isEmpty();
+        return j>0;
     }
 }
 
