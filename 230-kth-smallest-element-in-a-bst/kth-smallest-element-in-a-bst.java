@@ -14,18 +14,20 @@
  * }
  */
 class Solution {
-    PriorityQueue<Integer>pq=new PriorityQueue<>();
-    void fun(TreeNode t){
+    int ans;
+    int c=0;
+    void fun(TreeNode t,int k){
         if(t==null)return;
-        pq.offer(t.val);
-        fun(t.left);
-        fun(t.right);
+        fun(t.left,k);
+        c++;
+        if(c==k){
+            ans=t.val;
+            return;
+        }
+        fun(t.right,k);
     }
     public int kthSmallest(TreeNode root, int k) {
-        fun(root);
-        int ans=0;
-        for(int i=0;i<k;i++)
-        ans=pq.poll();
+        fun(root,k);
         return ans;
     }
 }
