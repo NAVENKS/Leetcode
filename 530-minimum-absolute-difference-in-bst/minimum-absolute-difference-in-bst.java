@@ -20,7 +20,7 @@ class Solution {
         if(t==null)return;
         fun(t.left);
         if(prev!=null)
-            min=Math.min(min,Math.abs(prev-t.val));
+        min=Math.min(min,Math.abs(prev-t.val));
         prev=t.val;
         fun(t.right);
     }
