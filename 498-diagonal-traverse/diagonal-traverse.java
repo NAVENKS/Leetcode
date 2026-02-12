@@ -11,17 +11,7 @@ class Solution {
             }
             int t=i;
             int k=j;
-            if(u%2==0){
-                List<Integer>l=new ArrayList<>();
-            while(t>=0 && k<c){
-                l.add(m[t][k]);
-                if(t==r-1 && k==c-1)s=false;
-                k++;
-                t--;
-            }
-            for(int q=l.size()-1;q>=0;q--)
-            ans[in++]=l.get(q);
-            }
+            int start=in;
             while(t>=0 && k<c){
                 ans[in++]=m[t][k];
                 if(t==r-1 && k==c-1)s=false;
@@ -29,6 +19,16 @@ class Solution {
                 t--;
             }
             i++;
+            if(u%2==0){
+                int end = in-1;
+                while(start<=end){
+                    int tem=ans[start];
+                    ans[start]=ans[end];
+                    ans[end]=tem;
+                    start++;
+                    end--;
+                }
+            }
             u++;
         }
         return ans;
