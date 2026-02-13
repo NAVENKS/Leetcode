@@ -10,7 +10,6 @@ class Solution {
                 z=Math.max(z,n[j][1]);
                 j++;
             }
-            System.out.println(j);
             l.add(new int[]{n[i][0],z});
             if(i==j)
             i++;
