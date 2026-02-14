@@ -4,7 +4,6 @@ class Solution {
         
         for (int num : nums) {
             pq.offer(num);
-            
             if (pq.size() > k) {
                 pq.poll();
             }
