@@ -19,7 +19,6 @@ class Solution {
         }
         ListNode head=pq.peek();
         ListNode prev=null;
-        System.out.print(pq.size());
         while(!pq.isEmpty()){
             ListNode n=pq.poll();
             if(prev==null){
