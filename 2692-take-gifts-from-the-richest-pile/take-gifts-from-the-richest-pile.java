@@ -12,7 +12,6 @@ class Solution {
             pq.offer(ke);
         }
         while(!pq.isEmpty()){
-            // System.out.print(pq.peek()+" ");
             ans+=pq.poll();
         }
         return ans;
