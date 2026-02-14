@@ -13,8 +13,10 @@ class Solution {
         PriorityQueue<ListNode>pq=new PriorityQueue<>((a,b)->a.val-b.val);
         for(ListNode head:lists){
             while(head!=null){
+                ListNode t=head.next;
+                head.next=null;
                 pq.offer(head);
-                head=head.next;
+                head=t;
             }
         }
         ListNode head=pq.peek();
@@ -23,11 +25,9 @@ class Solution {
             ListNode n=pq.poll();
             if(prev==null){
                 prev=n;
-                n.next=null;
             }
             else{
                 prev.next=n;
-                n.next=null;
                 prev=n;
             }
         }
