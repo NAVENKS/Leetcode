@@ -1,8 +1,5 @@
 class RecentCounter {
-    Queue<Integer>q=new LinkedList<>();
-    public RecentCounter() {
-    }
-    
+    Queue<Integer>q=new LinkedList<>();    
     public int ping(int t) {
         int range=t-3000;
         q.offer(t);
