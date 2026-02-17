@@ -7,9 +7,9 @@ class Solution {
             if(i>0 && x==n[i-1])continue;
             int j=i+1,k=n.length-1;
             while(j<k){
-                List<Integer>pair=new ArrayList<>();
                 int t=n[j]+n[k];
                 if(x+t==0){
+                    List<Integer>pair=new ArrayList<>();
                     pair.add(x);
                     pair.add(n[j]);
                     pair.add(n[k]);
@@ -17,7 +17,7 @@ class Solution {
                     j++;
                     k--;
                     while(j<k && n[j]==n[j-1])j++;
-                    while(j<k && n[k]==n[k+1])k--;
+                    while(k>=0 && n[k]==n[k+1])k--;
                 }
                 else if(x+t>0)
                 k--;
