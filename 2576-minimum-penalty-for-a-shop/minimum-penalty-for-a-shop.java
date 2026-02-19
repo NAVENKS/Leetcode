@@ -16,8 +16,6 @@ class Solution {
             count++;
         }
         n[0]=count;
-        System.out.println(Arrays.toString(p));
-        System.out.println(Arrays.toString(n));
         int max=0;
         for(int i=0;i<p.length;i++){
             if((p[max]+n[max])>(p[i]+n[i]))
