@@ -8,7 +8,6 @@ class Solution {
             count++;
             p[i+1]=count;
         }
-        if(count==str.length())return 0;
         count=0;
         for(int i=str.length()-1;i>=0;i--){
             n[i+1]=count;
