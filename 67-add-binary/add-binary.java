@@ -26,7 +26,15 @@ class Solution {
             i--;
             j--;
         }
-        ans=ans.reverse();
+        i=0;
+        j=ans.length()-1;
+        while(i<j){
+            char ch=ans.charAt(i);
+            ans.setCharAt(i,ans.charAt(j));
+            ans.setCharAt(j,ch);
+            j--;
+            i++;
+        }
         return ans.toString();
     }
 }
