@@ -13,7 +13,6 @@ class Solution {
             }
             i++;
         }
-        // System.out.print(Arrays.toString(n));
         for(i=0;i<n.length;i++){
             if(n[i]!=i+1)
             ans.add(n[i]);
