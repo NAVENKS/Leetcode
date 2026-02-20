@@ -1,18 +1,4 @@
 class Solution {
-    public char [][] reverse(char [][]arr){
-        int c=arr[0].length,r=arr.length;
-        for(int j=0;j<r;j++){
-        int s=0,e=c-1;
-        while(s<e){
-            char ch=arr[j][s];
-            arr[j][s]=arr[j][e];
-            arr[j][e]=ch;
-            s++;
-            e--;
-        }
-        }
-        return arr;
-    }
     public char[][] rotateTheBox(char[][] b) {
         int c=b[0].length,r=b.length;
         char arr[][]=new char[c][r];
