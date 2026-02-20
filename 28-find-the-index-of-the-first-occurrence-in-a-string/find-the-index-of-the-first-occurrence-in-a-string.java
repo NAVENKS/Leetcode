@@ -1,9 +1,14 @@
 class Solution {
     public int strStr(String h, String n) {
+        List<Integer>index=new ArrayList<>();
         for(int i=0;i<=h.length()-n.length();i++){
+            if(h.charAt(i)==n.charAt(0)){
+                index.add(i);
+            }
+        }
+        for(int i:index){
         boolean ans=true;
         int j=0;
-            if(h.charAt(i)==n.charAt(0)){
                 int s=i,e=i+n.length()-1;
                 for(;s<=e;s++){
                     if(h.charAt(s)!=n.charAt(j++)){
@@ -13,7 +18,6 @@ class Solution {
                 }
                 if(ans)
                 return i;
-            }
         }
         return -1;
     }
