@@ -1,24 +1,39 @@
 class Solution {
-    void fun(String s,long n[],int in){
-        if(in>=s.length() || (s.charAt(in)-48)<0 || (s.charAt(in)-48)>9 ||n[0]>Integer.MAX_VALUE)return;
-        long num=s.charAt(in)-48;
-        n[0]=(n[0]*10)+num;
-        fun(s,n,in+1);
-    }
     public int myAtoi(String s) {
-        s=s.trim();
-        if(s.length()==0)return 0;
-        long n[]={0};
-        int sign=1;
-        sign = (s.charAt(0) == '-') ? -1 : 1;
-        if(s.charAt(0)=='-' || s.charAt(0)=='+'){
-            fun(s,n,1);
+        long ans=0;
+        boolean neg=false;
+        int start=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)==' ')
+            continue;
+            else if(s.charAt(i)=='-' || s.charAt(i)=='+' || Character.isDigit(s.charAt(i))){
+                if(s.charAt(i)=='-'){
+                    neg=true;
+                    start=i+1;
+                }
+                else if(s.charAt(i)=='+'){
+                    start=i+1;
+                }
+                else
+                start=i;
+                break;
+            }
+            else return 0;
         }
-        else
-        fun(s,n,0);
-        System.out.print(n[0]);
-        if(n[0]>Integer.MAX_VALUE)
-        return sign==-1?Integer.MIN_VALUE:Integer.MAX_VALUE;
-        return (int)(n[0]*sign);
+        for(int i=start;i<s.length();i++){
+            if(Character.isDigit(s.charAt(i))){
+                ans=ans*10+(Integer.parseInt(s.charAt(i)+""));
+                if(ans>Integer.MAX_VALUE)
+                break;
+            }
+            else break;
+        }
+        if(neg)
+        ans*=-1;
+        if(ans>Integer.MAX_VALUE)
+        return Integer.MAX_VALUE;
+        else if(ans<Integer.MIN_VALUE)
+        return Integer.MIN_VALUE;
+        return (int)ans;
     }
 }
