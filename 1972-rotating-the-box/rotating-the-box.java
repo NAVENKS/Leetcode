@@ -28,7 +28,7 @@ class Solution {
             Queue<Integer>space=new LinkedList<>();
             for(int i=r-1;i>=0;i--){
                 if(arr[i][j]=='*')
-                space.clear();
+                space=new LinkedList<>();
                 else if(arr[i][j]=='.')
                 space.offer(i);
                 else{
