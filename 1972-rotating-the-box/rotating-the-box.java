@@ -18,12 +18,11 @@ class Solution {
         char arr[][]=new char[c][r];
         for(int i=0;i<r;i++){
             for(int j=0;j<c;j++){
-                arr[j][i]=b[i][j];
+                arr[j][r-i-1]=b[i][j];
             }
         }
         c=arr[0].length;
         r=arr.length;
-        arr=reverse(arr);
         for(int j=c-1;j>=0;j--){
             Queue<Integer>space=new LinkedList<>();
             for(int i=r-1;i>=0;i--){
