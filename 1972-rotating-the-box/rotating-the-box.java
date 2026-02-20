@@ -24,8 +24,6 @@ class Solution {
         c=arr[0].length;
         r=arr.length;
         arr=reverse(arr);
-        for(int i=0;i<r;i++)
-        System.out.println(Arrays.toString(arr[i]));
         for(int j=c-1;j>=0;j--){
             Queue<Integer>space=new LinkedList<>();
             for(int i=r-1;i>=0;i--){
