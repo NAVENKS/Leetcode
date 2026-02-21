@@ -51,14 +51,21 @@ class Solution {
         List<Integer>index1=find(s,a);
         List<Integer>index2=find(s,b);
         List<Integer>ans=new ArrayList<>();
-        for(int i:index1){
-            for(int j:index2){
-                if(Math.abs(i-j)<=k){
-                    ans.add(i);
-                    break;
-                }
-            }
+        int j = 0;
+
+    for (int i : index1) {
+
+        // move pointer forward while index2[j] is too small
+        while (j < index2.size() && index2.get(j) < i - k) {
+            j++;
         }
-        return ans;
+
+        // check valid range
+        if (j < index2.size() && Math.abs(index2.get(j) - i) <= k) {
+            ans.add(i);
+        }
+    }
+
+    return ans;
     }
 }
