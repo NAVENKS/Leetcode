@@ -21,7 +21,7 @@ class Solution {
             }
         }
         int longestPrefixSuffix = lps[n - 1];
-        return longestPrefixSuffix > 0 &&
+        return longestPrefixSuffix != 0 &&
                n % (n - longestPrefixSuffix) == 0;
     }
 }
