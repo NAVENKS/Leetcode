@@ -51,13 +51,6 @@ class Solution {
         List<Integer>index1=find(s,a);
         List<Integer>index2=find(s,b);
         List<Integer>ans=new ArrayList<>();
-        // for(int i:index1){
-        //     System.out.print(i+" ");
-        // }
-        // System.out.println(index1.size());
-        // for(int i:index2){
-        //     System.out.print(i+" ");
-        // }
         for(int i:index1){
             for(int j:index2){
                 if(Math.abs(i-j)<=k){
