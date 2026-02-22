@@ -6,14 +6,12 @@ class Solution {
             ans.add(new String(s.toString()));
             return;
         }
-        if (c < o)
-            return;
         if (o > 0) {
             s.append('(');
             generate(o - 1, c, s);
             s.deleteCharAt(s.length() - 1);
         }
-        if (c > 0) {
+        if (c > o) {
             s.append(')');
             generate(o, c - 1, s);
             s.deleteCharAt(s.length() - 1);
