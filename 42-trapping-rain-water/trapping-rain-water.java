@@ -15,8 +15,8 @@ class Solution {
             suf[i]=max;
         }
         int water=0;
-        System.out.println(Arrays.toString(pre));
-        System.out.println(Arrays.toString(suf));
+        // System.out.println(Arrays.toString(pre));
+        // System.out.println(Arrays.toString(suf));
         for(int i=0;i<height.length;i++){
             int min=Math.min(pre[i],suf[i]);
             water+=min-height[i];
