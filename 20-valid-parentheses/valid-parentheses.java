@@ -8,7 +8,7 @@ class Solution {
                 stack.pop();
             }
             else{
-                System.out.print(ch);
+                // System.out.print(ch);
                 return false;
             }
         }
