@@ -16,7 +16,6 @@ class Solution {
                 ans[i]=')';
             }
         }
-        System.out.println(Arrays.toString(ans));
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);
             if(Character.isLetter(ch) || ans[i]!='*')
