@@ -1,32 +1,38 @@
 class Solution {
-    int i = 0;
     public String decodeString(String s) {
-        return decode(s);
-    }
-    public String decode(String s) {
 
-        StringBuilder result = new StringBuilder();
-        int repeat = 0;
+        StringBuilder curr = new StringBuilder();
+        StringBuilder num = new StringBuilder();
 
-        while (i < s.length()) {
-            char ch = s.charAt(i);
+        Deque<Integer> countStack = new ArrayDeque<>();
+        Deque<StringBuilder> stringStack = new ArrayDeque<>();
+
+        for (char ch : s.toCharArray()) {
+
             if (Character.isDigit(ch)) {
-                repeat = repeat * 10 + (ch - '0');
+                num.append(ch);
             }
+
             else if (ch == '[') {
-                i++;
-                String decoded = decode(s);
-                result.append(decoded.repeat(repeat));
-                repeat = 0;
+                countStack.push(Integer.parseInt(num.toString()));
+                stringStack.push(curr);
+                curr = new StringBuilder();
+                num = new StringBuilder();
             }
+
             else if (ch == ']') {
-                return result.toString();
+                int repeat = countStack.pop();
+                StringBuilder prev = stringStack.pop();
+
+                String repeated = curr.toString().repeat(repeat);
+                curr = prev.append(repeated);
             }
+
             else {
-                result.append(ch);
+                curr.append(ch);
             }
-            i++;
         }
-        return result.toString();
+
+        return curr.toString();
     }
 }
