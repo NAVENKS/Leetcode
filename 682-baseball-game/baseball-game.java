@@ -16,7 +16,7 @@ class Solution {
                 int tem=stack.peek();
                 stack.push(stack.peek()*2);
             }
-            else if(ch=='C'){
+            else{
                 stack.pop();
             }
         }
