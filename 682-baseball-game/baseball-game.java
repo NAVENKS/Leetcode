@@ -24,7 +24,6 @@ class Solution {
             while(!stack.isEmpty()){
                 int pop=stack.pop();
                 ans+=pop;
-                System.out.print(pop+" ");
             }
         return ans;
     }
