@@ -2,7 +2,7 @@ class Solution {
     public int[] asteroidCollision(int[] arr) {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < arr.length; i++) {
-            if (!stack.isEmpty() && stack.peek() > 0 && arr[i] < 0) {
+            if (!stack.isEmpty() && stack.peek() >= 0 && arr[i] < 0) {
                 boolean flag=false;
                 while (!stack.isEmpty() && stack.peek() >= 0 && arr[i] < 0) {
                     int p = stack.peek();
