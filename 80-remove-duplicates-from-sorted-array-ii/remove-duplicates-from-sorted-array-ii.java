@@ -1,12 +1,29 @@
 class Solution {
-    public int removeDuplicates(int[] n) {
-        int k=2;
-        for(int i=2;i<n.length;i++){
-            if(n[i]!=n[k-2]){
-                n[k]=n[i];
-                k++;
+    public int removeDuplicates(int[] nums) {
+        int i = 0;
+        int d = nums[0];
+        int c = 1, j = 1;
+        for (; j < nums.length; j++) {
+            if (d == nums[j]) {
+                c++;
+            }
+            if (d != nums[j]) {
+                if (c == 1)
+                    nums[i++] = d;
+                else {
+                    nums[i++] = d;
+                    nums[i++] = d;
+                }
+                d = nums[j];
+                c = 1;
             }
         }
-        return k;
+        if (c == 1)
+            nums[i++] = d;
+        else {
+            nums[i++] = d;
+            nums[i++] = d;
+        }
+        return i;
     }
 }
