@@ -1,14 +1,10 @@
 class Solution {
-    public boolean canJump(int[] n) {
-        int max=0;
-        for(int i=0;i<n.length;i++){
-            if(i>max){
-                return false;
-            }
-            max=Math.max(max,i+n[i]);
-            if(max>=n.length-1){
-                return true;
-            }
+    public boolean canJump(int[] arr) {
+        int j=0;
+        for(int i=0;i<arr.length;i++){
+            if(i>j)return false;
+            j=Math.max(j,arr[i]+i);
+            if(j>=arr.length)return true;
         }
         return true;
     }
