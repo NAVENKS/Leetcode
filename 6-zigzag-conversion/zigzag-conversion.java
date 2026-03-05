@@ -1,40 +1,28 @@
 class Solution {
     public String convert(String s, int row) {
-        if(s.length()<2 || row==1)return s;
-        char ch[][]=new char[row][(s.length()/2)+1];
-        for(int i=0;i<row;i++)
-        Arrays.fill(ch[i],'*');
+        if(row==1)return s;
+        StringBuilder str[] = new StringBuilder[row];
+        for(int i=0;i<row;i++){
+            str[i]=new StringBuilder();
+        } 
+        int r=1;
         int i=0;
-        int r=0,c=0;
-        // System.out.print(r++ +" "+ c +" | ");
-        ch[0][0]=s.charAt(i++);
-        r++;
+        str[0].append(s.charAt(i++));
         while(i<s.length()){
             for(int j=0;j<row-1;j++){
                 if(i<s.length())
-                ch[r++][c]=s.charAt(i++);
-                // System.out.print(r++ +" "+ c +" | ");
-                // i++;
+                str[r++].append(s.charAt(i++));
             }
             r--;
-            System.out.println();
-            for(int j=0;j<row-1;j++){
+            for(int j=row-2;j>=0;j--){
                 if(i<s.length())
-                ch[--r][++c]=s.charAt(i++);
-                // System.out.print(--r +" "+ ++c +" | ");
-                // i++;
+                str[--r].append(s.charAt(i++));
             }
             r++;
-            // System.out.println();
         }
-        StringBuilder str = new StringBuilder();
-        for(int j=0;j<row;j++){
-            for(int k=0;k<ch[0].length;k++){
-                if(ch[j][k]!='*')
-                str.append(ch[j][k]);
-            }
-        }
-        return str.toString();
-        // return "";
+        StringBuilder ans = new StringBuilder();
+        for(int j=0;j<row;j++)
+        ans.append(str[j]);
+        return ans.toString();
     }
 }
