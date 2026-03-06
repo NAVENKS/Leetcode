@@ -1,7 +1,6 @@
 class Solution {
     public int candy(int[] r) {
         int arr[]=new int[r.length];
-        Arrays.fill(arr,0);
         for(int i=0;i<r.length;i++){
             if((i-1)>=0 && r[i]>r[i-1]){
                 arr[i]+=arr[i-1];
