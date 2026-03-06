@@ -10,12 +10,12 @@ class Solution {
             else
             arr[i]=1;
         }
-        System.out.println(Arrays.toString(arr));
+        // System.out.println(Arrays.toString(arr));
         for(int i=r.length-1;i>=0;i--){
             if((i+1)<r.length && r[i]>r[i+1] && arr[i]<=arr[i+1])
             arr[i]=arr[i+1]+1;
         }
-        System.out.print(Arrays.toString(arr));
+        // System.out.print(Arrays.toString(arr));
         int ans=0;
         for(int i=0;i<r.length;i++)
         ans+=arr[i];
