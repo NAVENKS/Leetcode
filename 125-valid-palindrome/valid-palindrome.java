@@ -1,14 +1,16 @@
 class Solution {
-    public boolean isPalindrome(String s) {
-        int i=0,j=s.length()-1;
-        while(i<j){
-            while(i<s.length() && !(Character.isLetter(s.charAt(i)) || Character.isDigit(s.charAt(i))))i++;
-            while(j>=0 && !(Character.isLetter(s.charAt(j)) || Character.isDigit(s.charAt(j))))j--;
-            if(i<s.length() && j>=0 && Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))){
+    public boolean isPalindrome(String str) {
+        int s = 0, e = str.length() - 1;
+        str = str.toLowerCase();
+        while (s <= e) {
+            while (s < e && (!Character.isLetter(str.charAt(s)) && !Character.isDigit(str.charAt(s))))
+                s++;
+            while (e > s && (!Character.isLetter(str.charAt(e)) && !Character.isDigit(str.charAt(e))))
+                e--;
+            if (s < str.length() && e >= 0 && str.charAt(s) != str.charAt(e))
                 return false;
-            }
-            i++;
-            j--;
+            s++;
+            e--;
         }
         return true;
     }
