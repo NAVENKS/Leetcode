@@ -1,19 +1,11 @@
 class Solution {
-    public int[] twoSum(int[] n, int t) {
-        int i=0,j=n.length-1;
-        int ans[]=new int[2];
-        while(i<j){
-            int sum=n[i]+n[j];
-            if(sum==t){
-                ans[0]=i+1;
-                ans[1]=j+1;
-                return ans;
-            }
-            else if(sum<t)
-            i++;
-            else
-            j--;
+    public int[] twoSum(int[] arr, int t) {
+        int l=0,r=arr.length-1;
+        while(l<r){
+            if((arr[l]+arr[r]) == t) return new int[]{l+1,1+r};
+            else if((arr[l]+arr[r]) > t)r--;
+            else l++;
         }
-        return ans;
+        return new int[2];
     }
 }
