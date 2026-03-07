@@ -19,7 +19,8 @@ class Solution {
                     if (p > (w[n[0]][n[1]]+1)) {
                         w[r][c] = w[n[0]][n[1]] + 1;
                         que.offer(new int[] { r, c });
-                        
+                        if(r==arr.length-1 && c==arr[c].length-1)
+                        que.poll();
                     }
                 }
             }
