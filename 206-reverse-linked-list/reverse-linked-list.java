@@ -11,14 +11,33 @@
 class Solution {
     public ListNode reverseList(ListNode head) {
         if(head==null || head.next==null)return head;
-        ListNode curr=head;
-        ListNode pre=null;
-        while(curr!=null){
-            ListNode t=curr.next;
-            curr.next=pre;
-            pre=curr;
-            curr=t;
+        Stack<ListNode> stack = new Stack<>();
+        ListNode tem=null;
+        while(head!=null){
+            tem=head.next;
+            head.next=null;
+            stack.push(head);
+            head=tem;
         }
-        return pre;
+        ListNode ans = stack.peek();
+        while(!stack.isEmpty()){
+            ListNode pre = stack.pop();
+            if(!stack.isEmpty()){
+                pre.next=stack.peek();
+            }
+        }
+        return ans;
     }
+    // public ListNode reverseList(ListNode head) {
+    //     if(head==null || head.next==null)return head;
+    //     ListNode curr=head;
+    //     ListNode pre=null;
+    //     while(curr!=null){
+    //         ListNode t=curr.next;
+    //         curr.next=pre;
+    //         pre=curr;
+    //         curr=t;
+    //     }
+    //     return pre;
+    // }
 }
