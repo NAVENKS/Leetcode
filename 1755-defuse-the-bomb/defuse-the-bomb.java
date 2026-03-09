@@ -18,7 +18,6 @@ class Solution {
             for(int i=0;i<arr.length;i++){
                 int j=i-1;
                 int c=0;
-                System.out.print(1+" ");
                 int t=k*-1;
                 for(int y=0;y<t;y++){
                     if(j<0)
