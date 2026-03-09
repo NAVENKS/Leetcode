@@ -21,8 +21,6 @@ class Solution {
             }
         }
         int max = Integer.MIN_VALUE;
-        for(int i=0;i<list.length;i++)
-        System.out.println(list[i]);
         for (int i = 0; i < arr.length; i++) {
             Stack<Integer> stack = new Stack<>();
             int c = 0;
@@ -39,7 +37,6 @@ class Solution {
                     }
                 }
             }
-            if(c==7)System.out.println(i);
             max = Math.max(max, c);
         }
         return max;
