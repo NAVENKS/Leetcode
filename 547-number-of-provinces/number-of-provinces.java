@@ -13,6 +13,7 @@ class Solution {
         boolean vis[] = new boolean[isConnected.length];
         int ans=0;
         for(int i=0;i<isConnected.length;i++){
+            if(vis[i]==true)continue;
             Stack<Integer>stack=new Stack<>();
             stack.push(i);
             if(vis[i]==false){
