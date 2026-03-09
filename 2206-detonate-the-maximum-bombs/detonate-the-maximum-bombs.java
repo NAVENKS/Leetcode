@@ -1,14 +1,9 @@
 class Solution {
     public int maximumDetonation(int[][] arr) {
-
         int n = arr.length;
         List<Integer>[] list = new ArrayList[n];
-
         for (int i = 0; i < n; i++) {
             list[i] = new ArrayList<>();
-        }
-
-        for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (i == j)
                     continue;
