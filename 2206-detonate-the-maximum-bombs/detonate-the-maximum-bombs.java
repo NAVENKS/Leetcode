@@ -38,6 +38,7 @@ class Solution {
                 }
             }
             max = Math.max(max, c);
+            if(max==arr.length)return max;
         }
         return max;
     }
