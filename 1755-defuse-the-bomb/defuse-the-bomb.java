@@ -2,8 +2,8 @@ class Solution {
     public int[] decrypt(int[] arr, int k) {
         int ans[]=new int[arr.length];
         if(k==0)return ans;
-        for(int i=0;i<arr.length;i++){
-            if(k>0){
+        else if(k>0){
+            for(int i=0;i<arr.length;i++){
                 int j=i+1;
                 int c=0;
                 for(int y=0;y<k;y++){
@@ -13,7 +13,9 @@ class Solution {
                 }
                 ans[i]=c;
             }
-            else{
+        }
+        else{
+            for(int i=0;i<arr.length;i++){
                 int j=i-1;
                 int c=0;
                 System.out.print(1+" ");
