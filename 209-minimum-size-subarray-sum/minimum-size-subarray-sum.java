@@ -5,8 +5,6 @@ class Solution {
         int min=Integer.MAX_VALUE;
         for(int i=0;i<arr.length;i++){
             s+=arr[i];
-            if(s>=t)
-            min=Math.min(min,i-l+1);
             while(s>t && ((s-arr[l])>=t)){
                 s-=arr[l++];
             }
