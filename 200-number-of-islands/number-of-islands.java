@@ -4,8 +4,8 @@ class Solution {
         int dir[][]={{1,0},{0,1},{-1,0},{0,-1}};
         for(int i=0;i<arr.length;i++){
             for(int j=0;j<arr[0].length;j++){
-                Queue<int []> que = new LinkedList<>();
                 if(arr[i][j]=='1'){
+                Queue<int []> que = new LinkedList<>();
                     u++;
                     que.offer(new int[]{i,j});
                     arr[i][j]='0';
