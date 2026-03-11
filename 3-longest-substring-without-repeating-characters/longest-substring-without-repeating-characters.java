@@ -9,8 +9,6 @@ class Solution {
             map.put(ch,map.getOrDefault(ch,0)+1);
             while(map.get(ch)>1){
                 map.put(s.charAt(l),map.get(s.charAt(l))-1);
-                // if(map.get(s.charAt(l))==0)
-                // map.remove(s.charAt(l));
                 l++;
             }
             max=Math.max(max,i-l+1);
