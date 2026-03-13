@@ -34,7 +34,6 @@ class Solution {
                 }
             }
         }
-        System.out.print(st+" "+e);
         if(e==Integer.MAX_VALUE)return "";
         return s.substring(st,e+1);
     }
