@@ -7,16 +7,13 @@ class Solution {
     }
 
     public void backtrack(int start, int k, int target, List<Integer> curr, List<List<Integer>> res) {
-
         if(curr.size() == k && target == 0){
             res.add(new ArrayList<>(curr));
             return;
         }
-
         if(curr.size() > k || target < 0){
             return;
         }
-
         for(int i = start; i <= 9; i++){
             curr.add(i);
             backtrack(i + 1, k, target - i, curr, res);
