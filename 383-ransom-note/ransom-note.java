@@ -1,16 +1,18 @@
 class Solution {
     public boolean canConstruct(String a, String b) {
-        HashMap<Character,Integer> map = new HashMap<>();
+        int hash[]=new int[128];
+        int len=0;
         for(char c:a.toCharArray()){
-            map.put(c,map.getOrDefault(c,0)+1);
+            if(hash[c]==0)len++;
+            hash[c]++;
         }
         for(char c:b.toCharArray()){
-            if(map.containsKey(c)){
-                map.put(c,map.get(c)-1);
-                if(map.get(c)==0)
-                map.remove(c);
+            if(hash[c]!=0){
+                hash[c]--;
+                if(hash[c]==0)
+                len--;
             }
         }
-        return map.size()==0;
+        return len==0;
     }
 }
