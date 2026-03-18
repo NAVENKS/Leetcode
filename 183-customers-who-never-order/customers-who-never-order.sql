@@ -1,2 +1,8 @@
 # Write your MySQL query statement below
-select name as Customers from Customers a where 0 = (select count(*) from Orders b where a.id=b.customerId);
+SELECT name AS Customers
+FROM Customers a
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM Orders b 
+    WHERE a.id = b.customerId
+);
